@@ -1,0 +1,259 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles */
+:root {
+  --primary-color: #22c55e;
+  --primary-light: rgba(34, 197, 94, 0.1);
+  --primary-dark: #1b9d4b;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Roboto", "Helvetica", "Arial", sans-serif;
+  overflow-x: hidden;
+  background-attachment: fixed;
+}
+
+/* Custom utility classes */
+.gradient-primary {
+  @apply bg-gradient-to-r from-blue-600 to-blue-400;
+}
+
+.gradient-secondary {
+  @apply bg-gradient-to-r from-gray-600 to-gray-400;
+}
+
+.gradient-success {
+  @apply bg-gradient-to-r from-green-600 to-green-400;
+}
+
+.gradient-info {
+  @apply bg-gradient-to-r from-cyan-600 to-cyan-400;
+}
+
+.gradient-warning {
+  @apply bg-gradient-to-r from-orange-600 to-orange-400;
+}
+
+.gradient-error {
+  @apply bg-gradient-to-r from-red-600 to-red-400;
+}
+
+.gradient-purple {
+  @apply bg-gradient-to-r from-purple-600 to-purple-400;
+}
+
+.gradient-teal {
+  @apply bg-gradient-to-r from-teal-600 to-teal-400;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  @apply transition-all duration-200 hover:shadow-md;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass {
+  background: rgba(17, 25, 40, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Button hover effects */
+.btn-hover {
+  transition: all 0.2s ease;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+.btn-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(34, 197, 94, 0.25);
+}
+
+/* Animations */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #6b7280;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+/* Card gradient borders */
+.gradient-border {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--primary-dark)
+  );
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Text gradient for headings */
+.text-gradient {
+  background-image: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--primary-dark)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* Float animation for icons */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Glow effect */
+.glow {
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.5);
+}
+
+.glow:hover {
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.7);
+}
+
+/* Background gradients */
+.bg-gradient-light {
+  background-image: radial-gradient(
+    circle at top right,
+    rgba(34, 197, 94, 0.08),
+    transparent 400px
+  );
+}
+
+.bg-gradient-dark {
+  background-image: radial-gradient(
+    circle at top right,
+    rgba(34, 197, 94, 0.15),
+    transparent 400px
+  );
+}
+
+/* Progress bar animation */
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-progress {
+  animation: progress 1.5s ease-out;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+/* Optimize transitions */
+.transition-optimize {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, box-shadow;
+}

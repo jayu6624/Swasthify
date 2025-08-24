@@ -1,0 +1,106 @@
+/* Profile Page Styles */
+.theme-container {
+    min-height: 100vh;
+    padding: 20px;
+    transition: background 0.3s, color 0.3s;
+  }
+  .light-mode {
+    background: #f8f9fa;
+    color: #212529;
+  }
+  .dark-mode {
+    background: #121212;
+    color: #ffffff;
+  }
+  
+  /* Profile Card */
+  .profile-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+  }
+  
+  /* Profile Icon */
+  .profile-icon {
+    fill: var(--profile-icon-fill);
+    transition: fill 0.3s ease;
+  }
+  :root {
+    --profile-icon-fill: #000000;
+  }
+  .dark-mode {
+    --profile-icon-fill: #ffffff;
+  }
+  
+  /* Chart Card */
+  .chart-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .chart-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+  }
+  
+  /* Reminders, Snapstreaks & Logs, Snap History Cards */
+  .reminder-card, .snapstreak-card, .snap-history-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .reminder-card:hover, .snapstreak-card:hover, .snap-history-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+  }
+  
+  /* Theme Variables */
+  :root {
+    --card-bg: #ffffff;
+    --card-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  .dark-mode {
+    --card-bg: #1e1e1e;
+    --card-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    --hover-shadow: 0px 4px 15px rgba(100, 255, 218, 0.5);
+  }
+  
+  /* Text Color Adjustments */
+  .profile-card h3,
+  .profile-card .form-label,
+  .chart-card h5,
+  .reminder-card h5,
+  .snapstreak-card h5,
+  .snap-history-card h5 {
+    color: var(--text-color);
+  }
+  :root {
+    --text-color: #000000;
+  }
+  .dark-mode {
+    --text-color: #ffffff;
+  }
+
+
+  .reminder-card p,
+  .snapstreak-card p,
+  .snap-history-card p {
+    color: var(--text-color);
+  }
+  :root {
+    --text-color: #000000;
+  }
+  .dark-mode {
+    --text-color: #ffffff;
+  }

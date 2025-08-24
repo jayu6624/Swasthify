@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Analyzer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍽️ Meal Analyzer</h1>
+            <p class="subtitle">Upload a food image to get nutritional information</p>
+        </header>
+
+        <div id="upload-section" class="section">
+            <div class="upload-container">
+                <div id="drop-area">
+                    <form id="upload-form">
+                        <input type="file" id="fileInput" accept="image/*" hidden>
+                        <label for="fileInput" class="file-label">
+                            <div class="upload-icon">
+                                <span class="material-icons">cloud_upload</span>
+                            </div>
+                            <div class="upload-text">
+                                <strong>Click to upload</strong> or drag and drop
+                                <p class="file-info">SVG, PNG, JPG or GIF (max. 10MB)</p>
+                            </div>
+                        </label>
+                    </form>
+                    <div id="preview-container" class="hidden">
+                        <img id="preview-image" src="" alt="Preview">
+                        <button id="change-image" class="btn secondary">Change Image</button>
+                    </div>
+                </div>
+                <button id="analyze-btn" class="btn primary" disabled>Analyze Meal</button>
+            </div>
+        </div>
+
+        <div id="loading-section" class="section hidden">
+            <div class="loading-spinner"></div>
+            <p>Analyzing your meal... Please wait</p>
+        </div>
+
+        <div id="results-section" class="section hidden">
+            <div class="results-header">
+                <h2>Analysis Results</h2>
+                <div class="total-nutrition">
+                    <div class="nutrition-title">Total Nutrition</div>
+                    <div class="nutrition-grid">
+                        <div class="nutrition-item">
+                            <span class="label">Calories</span>
+                            <span id="total-calories" class="value">0 kcal</span>
+                        </div>
+                        <div class="nutrition-item">
+                            <span class="label">Protein</span>
+                            <span id="total-protein" class="value">0g</span>
+                        </div>
+                        <div class="nutrition-item">
+                            <span class="label">Carbs</span>
+                            <span id="total-carbs" class="value">0g</span>
+                        </div>
+                        <div class="nutrition-item">
+                            <span class="label">Fats</span>
+                            <span id="total-fats" class="value">0g</span>
+                        </div>
+                        <div class="nutrition-item">
+                            <span class="label">Fiber</span>
+                            <span id="total-fiber" class="value">0g</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="cards-container" class="cards-container">
+                <!-- Cards will be added here dynamically -->
+            </div>
+            
+            <div class="actions-container">
+                <button id="edit-toggle" class="btn secondary">Edit Values</button>
+                <button id="confirm-btn" class="btn primary">Confirm</button>
+            </div>
+        </div>
+        
+        <div id="error-section" class="section hidden">
+            <div class="error-container">
+                <span class="material-icons error-icon">error_outline</span>
+                <h3>Analysis Error</h3>
+                <p id="error-message">Something went wrong during analysis.</p>
+                <button id="try-again" class="btn secondary">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
