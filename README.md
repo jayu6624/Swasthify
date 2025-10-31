@@ -154,4 +154,5 @@ For support and questions:
 
 ---
 
-**Made with ❤️ for better health and wellness**
+
+
